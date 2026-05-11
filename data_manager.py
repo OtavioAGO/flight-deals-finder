@@ -1,6 +1,6 @@
 import os
-from requests_cache import CachedSession
 from dotenv import load_dotenv
+from requests_cache import CachedSession
 
 load_dotenv()
 class DataManager:
@@ -12,4 +12,3 @@ class DataManager:
     def get_data(self):
         res = self.session.get(self.url, self.header)
         return res.json()
-    
