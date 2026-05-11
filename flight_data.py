@@ -20,7 +20,7 @@ class FlightData:
 
         for flight in all_flights:
             try:
-                price = flight.get['price']
+                price = flight.get('price')
             except KeyError:
                 print("No price available for flight.")
                 continue
