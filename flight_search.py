@@ -22,5 +22,6 @@ class FlightSearch:
         }
 
         res = self.session.get(url = self.url, params = search_params)
-
-        return res.json()
+        data = res.json()
+        all_flights = data['best_flights'] + data['other_flights']
+        return all_flights
