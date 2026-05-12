@@ -1,4 +1,4 @@
-class FlightData:
+class   FlightData:
     def __init__(self, price, origin, destination, out_date, return_date):
         self.price = price
         self.origin = origin
@@ -16,11 +16,11 @@ class FlightData:
         destination = first_flight["flights"][-1]["arrival_airport"]["id"]
         out_date = first_flight["flights"][0]["departure_airport"]["time"].split(" ")[0]
         return_date = first_flight["flights"][0]["arrival_airport"]["time"].split(" ")[0]
-        cheapest_flight = (lowest_price, origin, destination, out_date, return_date)
+        cheapest_flight = FlightData(lowest_price, origin, destination, out_date, return_date)
 
         for flight in all_flights:
             try:
-                price = flight.get('price')
+                price = flight['price']
             except KeyError:
                 print("No price available for flight.")
                 continue
