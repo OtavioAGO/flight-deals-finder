@@ -1,3 +1,4 @@
+import json
 import os
 from dotenv import load_dotenv
 from requests_cache import CachedSession
@@ -12,3 +13,12 @@ class DataManager:
     def get_data(self):
         res = self.session.get(self.url, self.header)
         return res.json()
+
+    def update_data(self, row_id, new_price):
+        new_data = {
+            "ticket": {
+                "lowestPrice" : new_price
+            }
+        }
+        res = self.session.put(url=f"{self.url}/{row_id}", json= new_data, headers = self.header)
+        return res.text
