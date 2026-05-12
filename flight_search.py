@@ -1,8 +1,6 @@
 import os
-from dotenv import load_dotenv
 from requests_cache import CachedSession
 
-load_dotenv()
 class FlightSearch:
     def __init__(self):
         self.url = os.getenv('SERPAPI_URL')

@@ -1,9 +1,7 @@
-import json
 import os
-from dotenv import load_dotenv
 from requests_cache import CachedSession
 
-load_dotenv()
+
 class DataManager:
     def __init__(self):
         self.url = os.getenv('SHEETY_URL')
